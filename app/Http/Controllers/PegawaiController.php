@@ -16,7 +16,7 @@ class PegawaiController extends Controller
         $today                      = new DateTime();
         $birthdate                  = new DateTime('1998-06-15');
         $today                      = new DateTime();
-        $data['my_age']             = $today->diff($birthdate)->y; 
+        $data['my_age']             = $today->diff($birthdate)->y;
         $data['hobbies']            = ['Menulis', 'Bermain Game', 'Berenang', 'Berenang', 'Memasak'];
         $data['current_semester']   = 4;
         $wisuda_date                = new DateTime('2025-10-30');
