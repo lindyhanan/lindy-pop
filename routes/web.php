@@ -2,11 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PegawaiController;
-
-
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('question/store', [QuestionController::class, 'store'])
+		->name('question.store');
 
 Route::get('/pcr', function () {
     return 'Selamat Datang di Website Kampus PCR!';
