@@ -8,6 +8,7 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/custom-style.css') }}">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -55,7 +56,9 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
         <div class="container">
+
             <a class="navbar-brand" href="#">My Laravel App</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,8 +85,9 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
+        <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" height="100">
         <div class="container">
-            <h1 class="display-6 mb-2">{{ $username }} </h1>
+            <h1 class="display-6 mb-2 font-custom">{{ $username }} </h1>
             <p class="lead mb-0"></p>
         </div>
     </section>
