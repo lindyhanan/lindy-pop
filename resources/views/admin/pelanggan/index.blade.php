@@ -21,68 +21,32 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- Primary Meta Tags -->
-    <title>Volt Premium Bootstrap Dashboard - Forms</title>
+    <title>Volt - Free Bootstrap 5 Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="title" content="Volt Premium Bootstrap Dashboard - Forms">
+    <meta name="title" content="Volt - Free Bootstrap 5 Dashboard">
     <meta name="author" content="Themesberg">
-    <meta name="description"
-        content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS.">
-    <meta name="keywords"
-        content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, themesberg, themesberg dashboard, themesberg admin dashboard" />
-    <link rel="canonical" href="https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://demo.themesberg.com/volt-pro">
-    <meta property="og:title" content="Volt Premium Bootstrap Dashboard - Forms">
-    <meta property="og:description"
-        content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS.">
-    <meta property="og:image"
-        content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://demo.themesberg.com/volt-pro">
-    <meta property="twitter:title" content="Volt Premium Bootstrap Dashboard - Forms">
-    <meta property="twitter:description"
-        content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS.">
-    <meta property="twitter:image"
-        content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets-admin') }}/img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets-admin/img/favicon/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32"
-        href="{{ asset('assets-admin') }}/img/favicon/favicon-32x32.png">
+        href="{{ asset('assets-admin/img/favicon/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ asset('assets-admin') }}/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="{{ asset('assets-admin') }}/img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="{{ asset('assets-admin') }}/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+        href="{{ asset('assets-admin/img/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('assets-admin/img/favicon/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('assets-admin/img/favicon/safari-pinned-tab.svg') }}" color="#ffffff">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Sweet Alert -->
-    <link type="text/css" href="{{ asset('assets-admin') }}/vendor/sweetalert2/dist/sweetalert2.min.css"
-        rel="stylesheet">
-
-    <!-- Notyf -->
-    <link type="text/css" href="{{ asset('assets-admin') }}/vendor/notyf/notyf.min.css" rel="stylesheet">
-
     <!-- Volt CSS -->
-    <link type="text/css" href="{{ asset('assets-admin') }}/css/volt.css" rel="stylesheet">
-
-    <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+    <link type="text/css" href="{{ asset('assets-admin/css/volt.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
-
-    <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
-
-
     <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
         <a class="navbar-brand me-lg-5" href="../../index.html">
-            <img class="navbar-brand-dark" src="{{ asset('assets-admin') }}/img/brand/light.svg" alt="Volt logo" /> <img
-                class="navbar-brand-light" src="{{ asset('assets-admin') }}/img/brand/dark.svg" alt="Volt logo" />
+            <img class="navbar-brand-dark" src="{{ asset('assets-admin/img/brand/light.svg') }}" alt="Volt logo" /> <img
+                class="navbar-brand-light" src="{{ asset('') }}assets-admin/img/brand/dark.svg" alt="Volt logo" />
         </a>
         <div class="d-flex align-items-center">
             <button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse"
@@ -139,6 +103,19 @@
                     </a>
                 </li>
                 <li class="nav-item  active ">
+                    <a href="{{ route('dashboard') }}" class="nav-link">
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                            </svg>
+                        </span>
+                        <span class="sidebar-text">Dashboard</span>
+                    </a>
+                </li>
+                <!-- Tambahkan blok kode ini -->
+                <li class="nav-item  active ">
                     <a href="" class="nav-link">
                         <span class="sidebar-icon">
                             <svg class="icon icon-xs me-2" data-slot="icon" fill="none" stroke-width="1.5"
@@ -151,39 +128,6 @@
                         </span>
                         <span class="sidebar-text">Pelanggan</span>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <span class="nav-link  collapsed  d-flex justify-content-between align-items-center"
-                        data-bs-toggle="collapse" data-bs-target="#submenu-app">
-                        <span>
-                            <span class="sidebar-icon">
-                                <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </span>
-                            <span class="sidebar-text">Tables</span>
-                        </span>
-                        <span class="link-arrow">
-                            <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </span>
-                    </span>
-                    <div class="multi-level collapse " role="list" id="submenu-app" aria-expanded="false">
-                        <ul class="flex-column nav">
-                            <li class="nav-item ">
-                                <a class="nav-link" href="../../pages/tables/bootstrap-tables.html">
-                                    <span class="sidebar-text">Bootstrap Tables</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
 
                 <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
@@ -266,7 +210,7 @@
                                             <div class="col-auto">
                                                 <!-- Avatar -->
                                                 <img alt="Image placeholder"
-                                                    src="{{ asset('assets-admin') }}/img/team/profile-picture-1.jpg"
+                                                    src="{{ asset('assets-admin/img/team/profile-picture-1.jpg') }}"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 ms-2">
@@ -288,7 +232,7 @@
                                             <div class="col-auto">
                                                 <!-- Avatar -->
                                                 <img alt="Image placeholder"
-                                                    src="{{ asset('assets-admin') }}/img/team/profile-picture-2.jpg"
+                                                    src="{{ asset('assets-admin/img/team/profile-picture-2.jpg') }}"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 ms-2">
@@ -310,7 +254,7 @@
                                             <div class="col-auto">
                                                 <!-- Avatar -->
                                                 <img alt="Image placeholder"
-                                                    src="{{ asset('assets-admin') }}/img/team/profile-picture-3.jpg"
+                                                    src="{{ asset('assets-admin/img/team/profile-picture-3.jpg') }}"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 m-2">
@@ -324,50 +268,6 @@
                                                 </div>
                                                 <p class="font-small mt-1 mb-0">Tagged you in a document called
                                                     "Financial plans",</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="list-group-item list-group-item-action border-bottom">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <!-- Avatar -->
-                                                <img alt="Image placeholder"
-                                                    src="{{ asset('assets-admin') }}/img/team/profile-picture-4.jpg"
-                                                    class="avatar-md rounded">
-                                            </div>
-                                            <div class="col ps-0 ms-2">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div>
-                                                        <h4 class="h6 mb-0 text-small">Joseph Garth</h4>
-                                                    </div>
-                                                    <div class="text-end">
-                                                        <small>1 d ago</small>
-                                                    </div>
-                                                </div>
-                                                <p class="font-small mt-1 mb-0">New message: "Hey, what's up? All set
-                                                    for the presentation?"</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="list-group-item list-group-item-action border-bottom">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <!-- Avatar -->
-                                                <img alt="Image placeholder"
-                                                    src="{{ asset('assets-admin') }}/img/team/profile-picture-5.jpg"
-                                                    class="avatar-md rounded">
-                                            </div>
-                                            <div class="col ps-0 ms-2">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div>
-                                                        <h4 class="h6 mb-0 text-small">Bonnie Green</h4>
-                                                    </div>
-                                                    <div class="text-end">
-                                                        <small>2 hrs ago</small>
-                                                    </div>
-                                                </div>
-                                                <p class="font-small mt-1 mb-0">New message: "We need to improve the
-                                                    UI/UX for the landing page."</p>
                                             </div>
                                         </div>
                                     </a>
@@ -389,7 +289,7 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="media d-flex align-items-center">
                                     <img class="avatar rounded-circle" alt="Image placeholder"
-                                        src="{{ asset('assets-admin') }}/img/team/profile-picture-3.jpg">
+                                        src="{{ asset('assets-admin/img/team/profile-picture-3.jpg') }}">
                                     <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
                                         <span class="mb-0 font-small fw-bold text-gray-900">Bonnie Green</span>
                                     </div>
@@ -413,24 +313,6 @@
                                             clip-rule="evenodd"></path>
                                     </svg>
                                     Settings
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Messages
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                    Support
                                 </a>
                                 <div role="separator" class="dropdown-divider my-1"></div>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -463,104 +345,54 @@
                         </a>
                     </li>
                     <li class="breadcrumb-item"><a href="#">Pelanggan</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Tambah Pelanggan</li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-between w-100 flex-wrap">
                 <div class="mb-3 mb-lg-0">
-                    <h1 class="h4">Tambah Pelanggan</h1>
-                    <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and
-                        more.</p>
+                    <h1 class="h4">Data Pelanggan</h1>
+                    <p class="mb-0">List data seluruh pelanggan</p>
                 </div>
                 <div>
-                    <a href="{{ route('pelanggan.create') }}" class="btn btn-success text-white"><i
-                            class="far fa-question-circle me-1"></i> Kembali</a>
+                    <a href="" class="btn btn-success text-white"><i class="far fa-question-circle me-1"></i>
+                        Tambah Pelanggan</a>
                 </div>
             </div>
         </div>
 
-
-        <div class="card-body">
-            <h5 class="card-title mb-4">Input Data Pelanggan</h5>
-            @if (session('success'))
-                <div class="alert alert-info">
-                    {!! session('success') !!}
-                </div>
-            @endif
-            <form action="{{ route('pelanggan.store') }}" method="POST">
-                @csrf
-                <div class="row mb-4">
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="first_name" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" required>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="birthday" class="form-label">Birthday</label>
-                        <div class="input-group">
-                            <input class="form-control" id="birthday" name="birthday" type="date"
-                                placeholder="mm/dd/yyyy" required>
-                            <span class="input-group-text">
-                                <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </span>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card border-0 shadow mb-4">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="table-pelanggan" class="table table-centered table-nowrap mb-0 rounded">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th class="border-0">First Name</th>
+                                        <th class="border-0">Last Name</th>
+                                        <th class="border-0">Birthday</th>
+                                        <th class="border-0">Gender</th>
+                                        <th class="border-0">Email</th>
+                                        <th class="border-0">Phone</th>
+                                        <th class="border-0 rounded-end">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($dataPelanggan as $item)
+                                        <tr>
+                                            <td>{{ $item->firstname }}</td>
+                                            <td>{{ $item->last_name }}</td>
+                                            <td>{{ $item->birhday }}</td>
+                                            <td>{{ $item->gender }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->phone }}</td>
+                                            <td>Tombol Edit & Tombol Hapus</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="last_name" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" required>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="gender" class="form-label">Gender</label>
-                        <select class="form-select" id="gender" name="gender" aria-label="Gender selection"
-                            required>
-                            <option value="" selected>-- Pilih --</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="phone" class="form-label">Phone</label>
-                        <input type="tel" class="form-control" id="phone" name="phone">
-                    </div>
                 </div>
-
-                <div class="d-flex justify-content-end mt-4">
-                    <form action="/pelanggan" method="POST">
-                        @csrf <div class="d-flex justify-content-end mt-4">
-                            <button type="submit" class="btn btn-dark me-2">Simpan</button>
-                            <button type="button" class="btn btn-light border">Batal</button>
-                        </div>
-                    </form>
-                </div>
-            </form>
-        </div>
-
-        <div class="card theme-settings bg-gray-800 theme-settings-expand" id="theme-settings-expand">
-            <div class="card-body bg-gray-800 text-white rounded-top p-3 py-2">
-                <span class="fw-bold d-inline-flex align-items-center h6">
-                    <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    Settings
-                </span>
             </div>
         </div>
 
@@ -593,47 +425,11 @@
     </main>
 
     <!-- Core -->
-    <script src="{{ asset('assets-admin') }}/vendor/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="{{ asset('assets-admin') }}/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Vendor JS -->
-    <script src="{{ asset('assets-admin') }}/vendor/onscreen/dist/on-screen.umd.min.js"></script>
-
-    <!-- Slider -->
-    <script src="{{ asset('assets-admin') }}/vendor/nouislider/distribute/nouislider.min.js"></script>
-
-    <!-- Smooth scroll -->
-    <script src="{{ asset('assets-admin') }}/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-
-    <!-- Charts -->
-    <script src="{{ asset('assets-admin') }}/vendor/chartist/dist/chartist.min.js"></script>
-    <script src="{{ asset('assets-admin') }}/vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-
-    <!-- Datepicker -->
-    <script src="{{ asset('assets-admin') }}/vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
-
-    <!-- Sweet Alerts 2 -->
-    <script src="{{ asset('assets-admin') }}/vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
-
-    <!-- Moment JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-
-    <!-- Vanilla JS Datepicker -->
-    <script src="{{ asset('assets-admin') }}/vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
-
-    <!-- Notyf -->
-    <script src="{{ asset('assets-admin') }}/vendor/notyf/notyf.min.js"></script>
-
-    <!-- Simplebar -->
-    <script src="{{ asset('assets-admin') }}/vendor/simplebar/dist/simplebar.min.js"></script>
-
-    <!-- Github buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="{{ asset('assets-admin/vendor/@popperjs/core/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('assets-admin/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
     <!-- Volt JS -->
-    <script src="{{ asset('assets-admin') }}//js/volt.js"></script>
-
-
+    <script src="{{ asset('assets-admin/js/volt.js') }}"></script>
 </body>
 
 </html>

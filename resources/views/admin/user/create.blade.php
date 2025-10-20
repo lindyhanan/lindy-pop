@@ -139,7 +139,7 @@
                         <span class="mt-1 ms-1 sidebar-text">Volt Overview</span>
                     </a>
                 </li>
-                <li class="nav-item  active ">
+                <li class="nav-item">
                     <a href="{{ route('dashboard') }}" class="nav-link">
                         <span class="sidebar-icon">
                             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +150,7 @@
                         <span class="sidebar-text">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item  active ">
+                <li class="nav-item">
                     <a href="" class="nav-link">
                         <span class="sidebar-icon">
                             <svg class="icon icon-xs me-2" data-slot="icon" fill="none" stroke-width="1.5"
@@ -162,6 +162,20 @@
                             </svg>
                         </span>
                         <span class="sidebar-text">Pelanggan</span>
+                    </a>
+                </li>
+                <li class="nav-item Active">
+                    <a href="" class="nav-link">
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs me-2" data-slot="icon" fill="none" stroke-width="1.5"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span class="sidebar-text">User</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -474,13 +488,13 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="breadcrumb-item"><a href="#">Pelanggan</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Tambah Pelanggan</li>
+                    <li class="breadcrumb-item"><a href="#">User</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Tambah User</li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-between w-100 flex-wrap">
                 <div class="mb-3 mb-lg-0">
-                    <h1 class="h4">Tambah Pelanggan</h1>
+                    <h1 class="h4">Tambah User</h1>
                     <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and
                         more.</p>
                 </div>
@@ -493,66 +507,44 @@
 
 
         <div class="card-body">
-            <h5 class="card-title mb-4">Input Data Pelanggan</h5>
+            <h5 class="card-title mb-4">Input Data User</h5>
             @if (session('success'))
                 <div class="alert alert-info">
                     {!! session('success') !!}
                 </div>
             @endif
-            <form action="{{ route('pelanggan.store') }}" method="POST">
+            <form action="{{ route('user.store') }}" method="POST">
                 @csrf
                 <div class="row mb-4">
 
                     <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="first_name" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" required>
-                    </div>
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name"
+                        value="{{old('name')}}" placeholder="Masukkan Nama" required>
 
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="birthday" class="form-label">Birthday</label>
-                        <div class="input-group">
-                            <input class="form-control" id="birthday" name="birthday" type="date"
-                                placeholder="mm/dd/yyyy" required>
-                            <span class="input-group-text">
-                                <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </span>
-                        </div>
                     </div>
 
                     <div class="col-md-4 col-sm-12 mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control" id="email" name="email"
+                        value="{{old('email')}}" placeholder="Masukkan Email" required>
                     </div>
 
                     <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="last_name" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" required>
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                        value="{{old('password')}}" placeholder="Masukkan Password" required>
                     </div>
 
                     <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="gender" class="form-label">Gender</label>
-                        <select class="form-select" id="gender" name="gender" aria-label="Gender selection"
-                            required>
-                            <option value="" selected>-- Pilih --</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="phone" class="form-label">Phone</label>
-                        <input type="tel" class="form-control" id="phone" name="phone">
+                        <label for="password_confirmation" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation"
+                        value="{{old('password_confirmation')}}" placeholder="Konfirmasi Password" required>
                     </div>
                 </div>
 
                 <div class="d-flex justify-content-end mt-4">
-                    <form action="/pelanggan" method="POST">
+                    <form action="/User" method="POST">
                         @csrf <div class="d-flex justify-content-end mt-4">
                             <button type="submit" class="btn btn-dark me-2">Simpan</button>
                             <button type="button" class="btn btn-light border">Batal</button>

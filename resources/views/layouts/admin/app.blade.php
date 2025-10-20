@@ -60,26 +60,14 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
-    {{-- start css --}}
-    <!-- Sweet Alert -->
-    <link type="text/css" href="{{ asset('assets-admin') }}/vendor/sweetalert2/dist/sweetalert2.min.css"
-        rel="stylesheet">
-
-    <!-- Notyf -->
-    <link type="text/css" href="{{ asset('assets-admin') }}/vendor/notyf/notyf.min.css" rel="stylesheet">
-
-    <!-- Volt CSS -->
-    <link type="text/css" href="{{ asset('assets-admin') }}/css/volt.css" rel="stylesheet">
-
     <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
-
+    @include('layouts.admin.css')
 </head>
 
 <body>
-
+    @include('layouts.admin.header')
     <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
 
-{{-- mulai header --}}
     <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
         <a class="navbar-brand me-lg-5" href="../../index.html">
             <img class="navbar-brand-dark" src="{{ asset('assets-admin') }}/img/brand/light.svg" alt="Volt logo" /> <img
@@ -140,11 +128,14 @@
                     </a>
                 </li>
                 <li class="nav-item  active ">
-                    <a href="{{ route('dashboard') }}" class="nav-link">
+                    <a href="{{ route('dashboard')}}" class="nav-link">
                         <span class="sidebar-icon">
-                            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                            <svg class="icon icon-xs me-2" data-slot="icon" fill="none" stroke-width="1.5"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z">
+                                </path>
                             </svg>
                         </span>
                         <span class="sidebar-text">Dashboard</span>
@@ -461,192 +452,11 @@
             </div>
         </nav>
 
-        <div class="py-4">
-            <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
-                <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
-                    <li class="breadcrumb-item">
-                        <a href="#">
-                            <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                                </path>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item"><a href="#">Pelanggan</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Tambah Pelanggan</li>
-                </ol>
-            </nav>
-            <div class="d-flex justify-content-between w-100 flex-wrap">
-                <div class="mb-3 mb-lg-0">
-                    <h1 class="h4">Tambah Pelanggan</h1>
-                    <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and
-                        more.</p>
-                </div>
-                <div>
-                    <a href="{{ route('dashboard') }}" class="btn btn-success text-white"><i
-                            class="far fa-question-circle me-1"></i> Kembali</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="card-body">
-            <h5 class="card-title mb-4">Input Data Pelanggan</h5>
-            @if (session('success'))
-                <div class="alert alert-info">
-                    {!! session('success') !!}
-                </div>
-            @endif
-            <form action="{{ route('pelanggan.store') }}" method="POST">
-                @csrf
-                <div class="row mb-4">
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="first_name" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" required>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="birthday" class="form-label">Birthday</label>
-                        <div class="input-group">
-                            <input class="form-control" id="birthday" name="birthday" type="date"
-                                placeholder="mm/dd/yyyy" required>
-                            <span class="input-group-text">
-                                <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="last_name" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" required>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="gender" class="form-label">Gender</label>
-                        <select class="form-select" id="gender" name="gender" aria-label="Gender selection"
-                            required>
-                            <option value="" selected>-- Pilih --</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 mb-3">
-                        <label for="phone" class="form-label">Phone</label>
-                        <input type="tel" class="form-control" id="phone" name="phone">
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-end mt-4">
-                    <form action="/pelanggan" method="POST">
-                        @csrf <div class="d-flex justify-content-end mt-4">
-                            <button type="submit" class="btn btn-dark me-2">Simpan</button>
-                            <button type="button" class="btn btn-light border">Batal</button>
-                        </div>
-                    </form>
-                </div>
-            </form>
-        </div>
-
-        <div class="card theme-settings bg-gray-800 theme-settings-expand" id="theme-settings-expand">
-            <div class="card-body bg-gray-800 text-white rounded-top p-3 py-2">
-                <span class="fw-bold d-inline-flex align-items-center h6">
-                    <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    Settings
-                </span>
-            </div>
-        </div>
-
-        <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
-            <div class="row">
-                <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
-                    <p class="mb-0 text-center text-lg-start">© 2019-<span class="current-year"></span> <a
-                            class="text-primary fw-normal" href="https://themesberg.com"
-                            target="_blank">Themesberg</a></p>
-                </div>
-                <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
-                    <!-- List -->
-                    <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
-                        <li class="list-inline-item px-0 px-sm-2">
-                            <a href="https://themesberg.com/about">About</a>
-                        </li>
-                        <li class="list-inline-item px-0 px-sm-2">
-                            <a href="https://themesberg.com/themes">Themes</a>
-                        </li>
-                        <li class="list-inline-item px-0 px-sm-2">
-                            <a href="https://themesberg.com/blog">Blog</a>
-                        </li>
-                        <li class="list-inline-item px-0 px-sm-2">
-                            <a href="https://themesberg.com/contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
+        @include('layouts.admin.footer')
     </main>
-{{-- akhir header --}}
 
-{{-- sra --}}
     <!-- Core -->
-    <script src="{{ asset('assets-admin') }}/vendor/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="{{ asset('assets-admin') }}/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Vendor JS -->
-    <script src="{{ asset('assets-admin') }}/vendor/onscreen/dist/on-screen.umd.min.js"></script>
-
-    <!-- Slider -->
-    <script src="{{ asset('assets-admin') }}/vendor/nouislider/distribute/nouislider.min.js"></script>
-
-    <!-- Smooth scroll -->
-    <script src="{{ asset('assets-admin') }}/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-
-    <!-- Charts -->
-    <script src="{{ asset('assets-admin') }}/vendor/chartist/dist/chartist.min.js"></script>
-    <script src="{{ asset('assets-admin') }}/vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-
-    <!-- Datepicker -->
-    <script src="{{ asset('assets-admin') }}/vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
-
-    <!-- Sweet Alerts 2 -->
-    <script src="{{ asset('assets-admin') }}/vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
-
-    <!-- Moment JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-
-    <!-- Vanilla JS Datepicker -->
-    <script src="{{ asset('assets-admin') }}/vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
-
-    <!-- Notyf -->
-    <script src="{{ asset('assets-admin') }}/vendor/notyf/notyf.min.js"></script>
-
-    <!-- Simplebar -->
-    <script src="{{ asset('assets-admin') }}/vendor/simplebar/dist/simplebar.min.js"></script>
-
-    <!-- Github buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-    <!-- Volt JS -->
-    <script src="{{ asset('assets-admin') }}//js/volt.js"></script>
-
+    @include('layouts.admin.js')
 
 </body>
 

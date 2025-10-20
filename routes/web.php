@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\DashboardController;
@@ -29,6 +30,8 @@ Route::get('/nama/{param1}', function ($param1) {
 });
 
 Route::resource('pelanggan', PelangganController::class);
+
+Route::resource('user', UserController::class);
 
 Route::get('/nim/{param1?}', function ($param1 = '') {
     return 'NIM saya: '.$param1;
