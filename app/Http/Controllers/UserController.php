@@ -10,10 +10,10 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data['dataUser'] = User::all();
-		return view('admin.user.index', $data);
+        $data['dataUser'] = User::paginate(10)->withQueryString();
+        return view('admin.user.index', $data);
     }
 
     /**
