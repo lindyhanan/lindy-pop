@@ -1,27 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
-    @include('layouts.admin.css') {{-- CSS + Tailwind/Bootstrap --}}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Volt Pro Dashboard - @yield('title', 'Admin Panel')</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Volt Pro Bootstrap 5 Admin Dashboard Template">
+
+    @include('layouts.admin.css')
+    @stack('css') {{-- Untuk CSS tambahan per halaman --}}
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col">
 
-    {{-- Container utama --}}
-    <div class="flex flex-1">
+<body>
 
+    @include('layouts.admin.sidebar')
+    <main class="content">
 
-        {{-- Pastikan sidebar punya kelas w-64 atau lebar tetap --}}
+        @include('layouts.admin.header')
+        {{-- Tampilkan Notifikasi Sukses --}}
+        @if (session('success'))
+            {{-- Pastikan div alert diletakkan di dalam main atau content wrapper --}}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
 
-        {{-- Konten utama --}}
-        <main class="flex-1 p-6 overflow-auto">
-            @include('layouts.admin.header') {{-- Header di atas konten --}}
-            @yield('content') {{-- Konten halaman --}}
-        </main>
+        {{-- Bagian 3: Konten Unik Setiap Halaman --}}
+        @yield('content')
+        {{-- End Content --}}
 
-    </div>
+        {{--
+        @if (isset($dataPelanggan) && method_exists($dataPelanggan, 'links'))
+            <div class="mt-4">
+                {{ $dataPelanggan->links() }}
+            </div>
+        @elseif(isset($users) && method_exists($users, 'links'))
+            <div class="mt-4">
+                {{ $users->links() }}
+            </div>
+        @endif
 
-    {{-- Footer + JS --}}
-    @include('layouts.admin.footer')
+        </div>
+        </div>
+        --}}
+
+        @include('layouts.admin.footer')
+    </main>
+
     @include('layouts.admin.js')
-
 </body>
+
 </html>

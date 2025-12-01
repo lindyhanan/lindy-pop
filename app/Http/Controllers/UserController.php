@@ -31,6 +31,7 @@ class UserController extends Controller
     {
         $data['name']                  = $request->name;
         $data['email']                 = $request->email;
+        $data['role']     = $request->role;
         $data['password']              = Hash::make($request->password);
         $data['password_confirmation'] = $request->password_confirmation;
 
